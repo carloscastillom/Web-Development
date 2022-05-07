@@ -1,0 +1,59 @@
+.container{
+    display:grid;
+    grid-template-rows: 250px 600px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* Initially each element has its own row for small screens */
+    grid-template-areas: 
+    "hd"
+    "main"
+    "ft";
+    border: 2px solid yellow;
+  }
+  /* add css for nested grid here */
+  .nestedGrid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  }
+  .nestedGrid > *{
+    border: 2px solid aquamarine;
+  }
+
+
+  .nestedflexBox{
+    display: inline-flexbox;
+    grid-template-rows: 50% 50%;
+  }
+  .nestedflexBox > *{
+    border: 2px solid green;
+  }
+
+  .box{
+      border: 1px solid red;
+      background: #a1a190;
+      }
+    .header{
+      /* row start/column start/ row end/ column end */
+      grid-area:hd;
+    }
+    .footer{
+      grid-area: ft;  
+    }
+    .sidebar{
+      grid-area: sd;
+    }
+    .content{
+      grid-area: main;
+    }
+  /* If Screen Is Wide Enough */
+  @media(min-width:900px) {
+  .container{
+        display:grid;
+        grid-template-rows: 250px 600px;
+        grid-template-areas: 
+        "hd"
+        "main"
+        "ft";
+        border: 2px solid red;
+    }
+  }
