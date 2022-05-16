@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
+
 .container{
     display:grid;
     grid-template-rows: 6em 2000px; /*===== TODO==== Try to make it more flexible the pixels*/
@@ -9,13 +10,25 @@
     "hd"
     "main"
     "ft";
-    border: 2px solid yellow;
+    /*border: 2px solid yellow;*/
     font-family: "Quicksand", sans-serif;
   }
  
   
+  a {
+   
+    text-decoration: none;
+  }
+
+
+  #hdbu {
+    color: rgb(230, 230, 230);
+    padding-top:  1rem;
+    gap: 2rem;
+  }
+
     .box{
-        border: 1px solid red;
+        /*border: 1px solid red;*/
         background: #adbdd1ea;
         }
     .header{
@@ -45,7 +58,7 @@
       place-items: center;
     }
     .nestedGrid > *{
-      border: 2px solid aquamarine;
+      /*border: 2px solid aquamarine;*/
       justify-content: space-between;
     }
   
@@ -76,11 +89,11 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        border: 2px solid blueviolet;
+        /*border: 2px solid blueviolet;*/
         
       }
       .flexbox_header > *{
-        border: 2px solid green;
+       /* border: 2px solid green;*/
       }
 
       .flexbox_footer{
@@ -88,10 +101,10 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
-        border: 2px solid blueviolet;
+        /*border: 2px solid blueviolet;*/
       }
       .flexbox_footer > *{
-        border: 2px solid green;
+        /*border: 2px solid green;*/
       }
 
       .logo {
@@ -125,7 +138,7 @@
         "hd"
         "main"
         "ft";
-        border: 2px solid rosybrown;
+        /*border: 2px solid rosybrown;*/
     }
 
     .card {
@@ -140,5 +153,9 @@
     background: linear-gradient(to right, #FFFFFF, #ECE9E6);
     
     }
+
+    @import "blogPost.css";
+
+
 
   }
