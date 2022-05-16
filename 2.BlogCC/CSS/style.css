@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("blogPost.css");
+@import url("navigation_menu.css");
+@import url("additions.css");
 
 
 .container{
@@ -14,18 +17,8 @@
     font-family: "Quicksand", sans-serif;
   }
  
+
   
-  a {
-   
-    text-decoration: none;
-  }
-
-
-  #hdbu {
-    color: rgb(230, 230, 230);
-    padding-top:  1rem;
-    gap: 2rem;
-  }
 
     .box{
         /*border: 1px solid red;*/
@@ -43,9 +36,7 @@
       color: rgb(230, 230, 230);
       background: #142b01ea;
     }
-    .sidebar{
-      grid-area: sd;
-    }
+
     .content{
       grid-area: main;
     }
@@ -63,28 +54,7 @@
     }
   
   
-    .card {
-        display: flex;
-        flex-direction: column;
-        margin: 10px ;
-        width: 20rem; 
-        overflow: hidden;
-        box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
-        border-radius: 1em;
-        background: #ECE9E6;
-        margin-left: 50px ;
-      background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-      
-      }
-      .card__body {
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        
-        
-      }
-   
+    
       .flexbox_header{
         display: flex;
         flex-flow: row wrap;
@@ -117,9 +87,9 @@
         display: flex;
         padding: 1rem;
         gap: 0.5rem;
-
+    
     }
-
+    
     .nav_butt {
       
       display: flex;
@@ -127,7 +97,7 @@
       gap: 2rem;
       width: 5rem;
     }
-  
+
   
     /* If Screen Is Wide Enough */
   @media(min-width:900px) {

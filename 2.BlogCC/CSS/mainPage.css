@@ -1,3 +1,6 @@
+@import url("blogPost.css");
+
+
 .container{
     display:grid;
     grid-template-columns: 1fr;
