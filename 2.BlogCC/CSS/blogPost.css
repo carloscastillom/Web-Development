@@ -1,6 +1,7 @@
 
 .centerflex {
     display: flex;
+    direction: row;
     margin: 10px ;
     grid-template-rows: 1fr;
     align-items: center;
@@ -13,7 +14,7 @@
   display: flex;
   flex-direction: column;
   margin: 10px ;
-  width: 80rem; 
+  width: 20rem; 
   overflow: hidden;
   box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
@@ -23,5 +24,10 @@
 
 .blogPostHeader {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
+
+ .blogPostHeaderB1 {
+    display: flex;
+    flex-direction: column;
   }

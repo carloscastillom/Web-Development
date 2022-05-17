@@ -29,3 +29,11 @@
   button:hover {
     text-decoration: underline;
   }
+
+  .carlosC{
+
+    border-radius: 40%;
+    border: 2px solid #7a7a7a;
+    width: 250px;
+
+  }
