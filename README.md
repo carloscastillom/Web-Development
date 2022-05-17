@@ -2,5 +2,5 @@
 
 Test of web developement.
 
-Persomal web blog
+Personal web blog
 
