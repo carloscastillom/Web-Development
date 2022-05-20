@@ -26,12 +26,7 @@
 const navBar = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
 console.log(sections);
-for (let section of sections) {
-    const header = section.querySelector('h2')
-    const item = document.createElement('p');
-    item.textContent = header.textContent;
-    navBar.appendChild(item);
-}
+
 
 
 
@@ -50,10 +45,28 @@ for (let section of sections) {
 */
 
 // build the nav
-
-
 // Add class 'active' to section when near top of viewport
 
+for (let section of sections) {
+    const header = section.querySelector('h2')
+    const item = document.createElement("h3");
+    item.textContent = header.textContent;
+    navBar.appendChild(item);
+}
+
+var element = document.getElementById("section1");
+console.log(element);
+element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+
+
+var element = document.getElementById("section2");
+console.log(element);
+element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+
+
+var element = document.getElementById("section3");
+console.log(element);
+element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 
 // Scroll to anchor ID using scrollTO event
 

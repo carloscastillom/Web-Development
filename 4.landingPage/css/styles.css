@@ -26,6 +26,13 @@ h1 {
     margin: 2em 1rem;
 }
 
+
+h3 {
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 1em;
+    color: rgb(24, 62, 143);
+}
+
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
