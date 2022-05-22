@@ -59,14 +59,7 @@ console.log(element);
 element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 
 
-var element = document.getElementById("section2");
-console.log(element);
-element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 
-
-var element = document.getElementById("section3");
-console.log(element);
-element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 
 // Scroll to anchor ID using scrollTO event
 
