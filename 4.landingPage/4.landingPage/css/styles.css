@@ -29,6 +29,16 @@ button {
     color: rgb(32, 12, 122);
 }
 
+
+button.acti {
+    background: rgba(95, 95, 139, 0.884);
+    /*background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);*/
+    margin-top: 0.5rem;
+    border: blue;
+    font-family: 'Merriweather', serif;
+    color: rgb(32, 12, 122);
+}
+
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;

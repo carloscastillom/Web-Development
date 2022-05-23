@@ -40,8 +40,8 @@ console.log(sections);
 const isInViewport = function (elem) {
 	const distance = elem.getBoundingClientRect();
 	return (
-		distance.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-		
+		distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		distance.top > -10
 	);
 };
 
@@ -80,16 +80,18 @@ for (let section of sections) {
     height.push(positionY);
 
     if(isInViewport(section))
-        {section.classList.add("your-active-class");}
+        {section.classList.add("your-active-class");
+         item.classList.add("acti");}
     else 
-        {section.classList.remove("your-active-class");}
+        {section.classList.remove("your-active-class");
+        item.classList.remove("acti");}
 
     console.log(section);
     console.log(section.getBoundingClientRect());
 
 
 }
-
+console.log(window.scrollY);
 console.log(window.innerHeight);
 console.log(document.documentElement.clientHeight);
 
