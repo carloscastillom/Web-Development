@@ -23,56 +23,77 @@
  * 
 */
 
+
+
+
+
+// build the nav
+// Add class 'active' to section when near top of viewport
+
+
 const navBar = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
 console.log(sections);
 
 
 
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-// Add class 'active' to section when near top of viewport
-
-
-
+const isInViewport = function (elem) {
+	const distance = elem.getBoundingClientRect();
+	return (
+		distance.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+		
+	);
+};
 
 
 // Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
- * var element = document.getElementById("section1");
-*/
 
 // Build menu 
 
 // Scroll to section on link click
 
+//list were all position Y for the sections are added 
+const height = []; 
+//variable for position y of the section 
+let positionY = 0;
+
+
+
+//For all sections 
 for (let section of sections) {
+    //take the title
     const header = section.querySelector('h2')
-    const item = document.createElement("h3");
+    //Create the button 
+    const item = document.createElement("button");
+   
+    //use the text from the title for the section
     item.textContent = header.textContent;
-    item.addEventListener("click", function(){ section.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"}); }); 
+
+    // when click over the button, scroll to the next function
+    item.addEventListener("click", function(){ section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); }); 
+    
+    //add the new item to the navBar - HTML
     navBar.appendChild(item);
+
+    //increase the position by the new height of the current section and push it to the list Height
+    positionY += section.getBoundingClientRect().height;
+    height.push(positionY);
+
+    if(isInViewport(section))
+        {section.classList.add("your-active-class");}
+    else 
+        {section.classList.remove("your-active-class");}
+
+    console.log(section);
+    console.log(section.getBoundingClientRect());
+
 
 }
 
+console.log(window.innerHeight);
+console.log(document.documentElement.clientHeight);
+
+//console.log(window.scrollY+headerHeight);
 
 // Set sections as active
 
