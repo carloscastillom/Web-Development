@@ -37,7 +37,6 @@ console.log(sections);
 */
 
 
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -47,16 +46,6 @@ console.log(sections);
 // build the nav
 // Add class 'active' to section when near top of viewport
 
-for (let section of sections) {
-    const header = section.querySelector('h2')
-    const item = document.createElement("h3");
-    item.textContent = header.textContent;
-    navBar.appendChild(item);
-}
-
-var element = document.getElementById("section1");
-console.log(element);
-element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 
 
 
@@ -68,11 +57,22 @@ element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
  * End Main Functions
  * Begin Events
  * 
+ * var element = document.getElementById("section1");
 */
 
 // Build menu 
 
 // Scroll to section on link click
+
+for (let section of sections) {
+    const header = section.querySelector('h2')
+    const item = document.createElement("button");
+    item.textContent = header.textContent;
+    item.addEventListener("click", function(){ section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); }); 
+    navBar.appendChild(item);
+
+}
+
 
 // Set sections as active
 

@@ -19,6 +19,16 @@ body {
 }
 
 
+
+button {
+    background: transparent;
+    /*background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);*/
+    margin-top: 0.5rem;
+    border: blue;
+    font-family: 'Merriweather', serif;
+    color: rgb(32, 12, 122);
+}
+
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
@@ -73,12 +83,14 @@ section {
 /* Navigation Styles*/
 .navbar__menu ul {
     padding-left: 0;
+    height: 2rem;
     margin: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .navbar__menu li {
     display: inline-block;
+    
 }
 
 .navbar__menu .menu__link {
