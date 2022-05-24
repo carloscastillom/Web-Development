@@ -1,13 +1,16 @@
 # Landing Page Project
 
+HTML
+CSS
+JavaScript
+
 ## Table of Contents
 
-* [Instructions](#instructions)
+The Following Landing page have 4 different sectionswhich are dinamically select when the user scrolls through the page. The Navigation menu is linked to the every section, when the user clicks over the the section in the menu, the landing page automatically scrolls to the correct position.
 
-## Instructions
+![image](https://user-images.githubusercontent.com/65776444/170018839-e94b14be-2475-4eee-8ec9-354f404df95f.png)
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
 
-To get started, open `js/app.js` and start building out the app's functionality
+![image](https://user-images.githubusercontent.com/65776444/170018885-2afb60aa-33f9-47d7-b3ae-1b036b3fa998.png)
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+
