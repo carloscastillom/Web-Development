@@ -31,19 +31,7 @@
 // Add class 'active' to section when near top of viewport
 
 
-const navBar = document.querySelector('#navbar__list');
-const sections = document.querySelectorAll('section');
-console.log(sections);
 
-
-
-const isInViewport = function (elem) {
-	const distance = elem.getBoundingClientRect();
-	return (
-		distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		distance.top > -10
-	);
-};
 
 
 // Scroll to anchor ID using scrollTO event
@@ -52,33 +40,71 @@ const isInViewport = function (elem) {
 
 // Scroll to section on link click
 
-//list were all position Y for the sections are added 
-const height = []; 
-//variable for position y of the section 
-let positionY = 0;
+
+const navBar = document.querySelector('#navbar__list');
+const sections = document.querySelectorAll('section');
+console.log(sections);
 
 
-
-//For all sections 
+//For all sections create a button
 for (let section of sections) {
     //take the title
     const header = section.querySelector('h2')
     //Create the button 
     const item = document.createElement("button");
-   
     //use the text from the title for the section
     item.textContent = header.textContent;
-
-    // when click over the button, scroll to the next function
-    item.addEventListener("click", function(){ section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); }); 
-    
+    item.setAttribute("id",header.textContent );
     //add the new item to the navBar - HTML
     navBar.appendChild(item);
 
-    //increase the position by the new height of the current section and push it to the list Height
-    positionY += section.getBoundingClientRect().height;
-    height.push(positionY);
+    item.addEventListener("click", function()
+        { 
+            section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        }
+      );
+}
 
+
+
+
+// Add class 'active' to section when it is near top of viewport
+function makeActive() {
+    for (const section of sections) {
+      const box = section.getBoundingClientRect();
+      const textOfSection = section.querySelector('h2');
+      const menuItem = document.getElementById(textOfSection.textContent);
+      // You can play with the values in the "if" condition to further make it more accurate. 
+      if (box.top <= 50 && box.bottom >= 50) {
+        // Apply active state to the section and the menu button
+        section.classList.add("your-active-class");
+        menuItem.classList.add("acti");
+      } else {
+        // Remove active state to the section and the menu button
+        section.classList.remove("your-active-class");
+        menuItem.classList.remove("acti");
+      }
+    }
+  }
+
+  //make active during scroll
+  document.addEventListener("scroll", function() 
+    {
+        makeActive();
+    });
+
+
+/*
+
+ // when click over the button, scroll to the next function
+    item.addEventListener("click", function()
+        { 
+            section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+            section.classList.add("your-active-class");
+            item.classList.add("acti"); 
+        }
+    ); 
+ 
     if(isInViewport(section))
         {section.classList.add("your-active-class");
          item.classList.add("acti");}
@@ -86,11 +112,9 @@ for (let section of sections) {
         {section.classList.remove("your-active-class");
         item.classList.remove("acti");}
 
-    console.log(section);
-    console.log(section.getBoundingClientRect());
+*/
 
 
-}
 console.log(window.scrollY);
 console.log(window.innerHeight);
 console.log(document.documentElement.clientHeight);

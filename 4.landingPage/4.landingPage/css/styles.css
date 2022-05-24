@@ -23,7 +23,10 @@ body {
 button {
     background: transparent;
     /*background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);*/
-    margin-top: 0.5rem;
+    margin-top: 0;
+    margin: 0;
+    top: 0;
+    height: 2rem;
     border: blue;
     font-family: 'Merriweather', serif;
     color: rgb(32, 12, 122);
@@ -33,7 +36,9 @@ button {
 button.acti {
     background: rgba(95, 95, 139, 0.884);
     /*background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);*/
-    margin-top: 0.5rem;
+    margin-top: 0;
+    margin: 0;
+    top: 0;
     border: blue;
     font-family: 'Merriweather', serif;
     color: rgb(32, 12, 122);
@@ -52,6 +57,7 @@ h3 {
     font-size: 1em;
     color: rgb(24, 62, 143);
 }
+
 
 @media only screen and (min-width: 35em){
     h1 {
@@ -95,6 +101,7 @@ section {
     padding-left: 0;
     height: 2rem;
     margin: 0;
+    top: 0;
     text-align: center;
 }
 
