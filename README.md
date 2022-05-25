@@ -12,4 +12,4 @@ About me
 ![image](https://user-images.githubusercontent.com/65776444/169038466-0263fac3-3403-4501-961d-948240519a97.png)
 
 
-proximamente web app de finances
+proximamente web app de finances. Landing page Zulema Atelier
