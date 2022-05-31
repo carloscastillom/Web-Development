@@ -1,5 +1,7 @@
 # Web-Development
 
+## Web blog - CC
+
 Test of web developement.
 
 Personal web blog
@@ -18,12 +20,13 @@ Web API yahoo Finance
 Landing page Zulema Atelier. 
 Header wordpress. check out 
 
+## Landing Page
 
 HTML
 CSS
 JavaScript
 
-## Table of Contents
+### Table of Contents
 
 The Following Landing page have 4 different sectionswhich are dinamically select when the user scrolls through the page. The Navigation menu is linked to the every section, when the user clicks over the the section in the menu, the landing page automatically scrolls to the correct position.
 
