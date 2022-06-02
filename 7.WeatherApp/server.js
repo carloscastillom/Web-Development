@@ -12,6 +12,8 @@ const bodyParser = require('body-parser')
 /* Middleware*/
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Cors for cross origin allowance
 const cors = require('cors');
 app.use(cors());
 
@@ -29,8 +31,8 @@ const server = app.listen(port, listening);
 // GET route
 app.get('/all', sendData);
 
-function sendData (request, response) {
-  response.send(projectData);
+function sendData (req, res) {
+  res.send(projectData);
 };
 
 // POST route
@@ -47,6 +49,20 @@ app.post('/animal', addAnimal);
 
 function addAnimal (req,res){
     data.push(req.body);
+};
+
+
+//animal web API
+const fakeData = {
+  temperature:40,
+  evalDate:"test2.1",
+  user_res: "test2.2"
+}
+
+app.get('/fakeAnimalData', getFakeData);
+
+function getFakeData(req, res) {
+  res.send(fakeData);
 };
 
 

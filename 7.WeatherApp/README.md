@@ -18,7 +18,7 @@ Add a console.log() to the server callback function, and test that your server i
 
 
 Add a GET route that returns the projectData object in your server code
-# done 2.1
+
  Then, add a POST route that adds incoming data to projectData.
 The POST route should anticipate receiving three pieces of data from the request body
 temperature
@@ -26,16 +26,17 @@ date
 user response
 Make sure your POST route is setup to add each of these values with a key to projectData.
 
-# in progress 2.2
+# DONE 2 check the endpoitns
 
 Acquire API credentials from OpenWeatherMap website. Use your credentials and the base url to create global variables at the top of your app.js code.
+
 Write an async function in app.js that uses fetch() to make a GET request to the OpenWeatherMap API.
 Create an event listener for the element with the id: generate, with a callback function to execute when it is clicked.
 Inside that callback function call your async GET request with the parameters:
 base url
 user entered zip code (see input in html with id zip)
 personal API key
-
+# done in a halfway - Complete it seems functionality is ok 
 
 After your successful retrieval of the weather data, you will need to chain another Promise that makes a POST request to add the API data, as well as data entered by the user, to your app.
 
