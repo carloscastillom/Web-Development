@@ -35,36 +35,26 @@ function sendData (req, res) {
   res.send(projectData);
 };
 
+/*
 // POST route
 app.post('/add', callBack);
 
 function callBack(req,res){
   res.send('POST received');
 }
+*/ 
 
-// POST an animal
 const data = [];
-
+// POST route
 app.post('/animal', addAnimal);
 
 function addAnimal (req,res){
+    //res.send('POST received');
+    console.log('POST received'); //animal
     data.push(req.body);
 };
 
-
-//animal web API
-const fakeData = {
-  temperature:40,
-  evalDate:"test2.1",
-  user_res: "test2.2"
-}
-
-app.get('/fakeAnimalData', getFakeData);
-
-function getFakeData(req, res) {
-  res.send(fakeData);
-};
-
+ 
 
 
 

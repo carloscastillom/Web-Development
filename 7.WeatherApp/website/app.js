@@ -13,21 +13,35 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
  /* WEB API WITH FETCH DEMO--  */
  let baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip='
  let apiKey = '8ab8ea9eb0eecaa465855d144fdf3700&units=imperial';
- const zip_code =  document.getElementById('zip').value;
+ let zip_code =  document.getElementById('zip').value;
+ let feel =  document.getElementById('feelings').value;
 
  //when generate is clicked
  document.getElementById('generate').addEventListener('click', performAction);
 
- //function construction when the event is clicked
+ //function when the event is clicked
  function performAction(e){  
+
+    // zip code written by the user
+    zip_code = document.getElementById('zip').value; //updating variable 90210 for TEST
+
+     //feeling written by the user
+    feel = document.getElementById('feelings').value; //updating variable  for TEST
+
+   
+    console.log(zip_code) //print it in the console client
+    console.log(feel) //print it in the console client
+
    getAnimalDemo(baseURL,zip_code, apiKey)
  }
 
 
+// Definition of function to execute when generate is clicked
+
  const getAnimalDemo = async (baseURL, zipCode, key)=>{
  // 1.
-  //const res = await fetch(baseURL+zip_code+'&appid='+apiKey)
-  const res = await fetch('https://api.openweathermap.org/data/2.5/weather?zip=90210&appid=8ab8ea9eb0eecaa465855d144fdf3700&units=imperial')
+  const res = await fetch(baseURL+zipCode+'&appid='+key)
+  //const res = await fetch('https://api.openweathermap.org/data/2.5/weather?zip=90210&appid=8ab8ea9eb0eecaa465855d144fdf3700&units=imperial')
  // 2. Call Fake API
   // const res = await fetch('/fakeAnimalData')
    try {
@@ -44,6 +58,9 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
    }
  }
 
+
+// Async POST
+
 const postData = async ( url = '', data = {})=>{
     console.log(data)
     const response = await fetch(url, {
@@ -58,8 +75,10 @@ const postData = async ( url = '', data = {})=>{
     try {
       const newData = await response.json();
       return newData;
-    }catch(error) {
-    console.log("error", error);
+    }
+    catch(error) {
+      console.log("error", error);
+      // appropriately handle the error
     }
 };
 
@@ -76,12 +95,21 @@ const retrieveData = async (url='') =>{
   }
 };
 
-function postGet(){
+APIdata={
+    temperature:30, 
+    evalDate:"test",
+    user_res: "test2"
+  }
+  
+//do both to get the info after it was posted
+function postGet(data={}){
   //Do the POST Response new data 
-  postData('/animal', {temperature:30, evalDate:"test", user_res: "test2"})
+  postData('/animal',data)  
   //get the all data Request old data
-    .then(function(data){
-      retrieveData('/all')
-    })
+  .then(function(data){
+    retrieveData('/all')
+  })
 }
-postGet()
+
+// call
+postGet(APIdata)
