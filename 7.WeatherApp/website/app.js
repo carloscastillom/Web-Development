@@ -36,7 +36,7 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
  .then(function(data){
-  postData('/animal', { temp: "Test", date: newDate, content: feel });
+  postData('/animal', { temperature: "test", evalDate: newDate, user_res: feel });
 })
 }
 
@@ -51,11 +51,12 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
    try {
 
      const data = await res.json();
-     //console.log(data)
+     data.temperature= data.main.temp
+     console.log(data.main.temp)
      // 1. We can do something with our returned data here-- like chain promises!
 
      // 2. 
-     postData('/animal', data)
+     //postData('/animal', data)
    }  catch(error) {
      // appropriately handle the error
      console.log("error", error);
@@ -109,6 +110,10 @@ APIdata={
     user_res: "test2"
   }
   
+
+
+
+ //taken from the Course 
 //do both to get the info after it was posted
 function postGet(data={}){
   //Do the POST Response new data 
