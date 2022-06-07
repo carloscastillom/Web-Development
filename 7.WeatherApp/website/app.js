@@ -33,8 +33,12 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
     console.log(feel) //print it in the console client
 
    getAnimalDemo(baseURL,zip_code, apiKey)
- }
 
+
+ .then(function(data){
+  postData('/animal', { temp: "Test", date: newDate, content: feel });
+})
+}
 
 // Definition of function to execute when generate is clicked
 
@@ -47,7 +51,7 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
    try {
 
      const data = await res.json();
-     console.log(data)
+     //console.log(data)
      // 1. We can do something with our returned data here-- like chain promises!
 
      // 2. 
@@ -69,7 +73,11 @@ const postData = async ( url = '', data = {})=>{
     headers: {
         'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header        
+    body: JSON.stringify({
+      temperature: data.temp,
+      evalDate: data.date,
+      user_res: data.content
+    }), // body data type must match "Content-Type" header        
   });
 
     try {
