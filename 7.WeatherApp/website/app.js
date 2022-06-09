@@ -36,7 +36,8 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
  .then(function(data){
-  postData('/animal', { temperature: data.temperature, evalDate: newDate, user_res: feel });
+  postData('/animal', { temperature: data.temperature, evalDate: newDate, user_res: feel })
+  console.log(data);
 })
   .then(updateUI())
 }
@@ -127,6 +128,8 @@ const updateUI = async () => {
   }
 }
 
+
+/*
 APIdata={
     temperature:30, 
     evalDate:"test",
@@ -149,3 +152,4 @@ function postGet(data={}){
 
 // call
 postGet(APIdata)
+*/
