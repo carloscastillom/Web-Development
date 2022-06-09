@@ -43,15 +43,25 @@ function callBack(req,res){
   res.send('POST received');
 }
 */ 
+data =[];
 
-const data = [];
 // POST route
 app.post('/animal', addAnimal);
-
+// the problem must be here=============================== check chaining promises
 function addAnimal (req,res){
     //res.send('POST received');
+    console.log(data)
     console.log('POST received'); //animal
-    data.push(req.body);
+    newEntry={
+      temperature: req.body.temperature,
+      evalDate: req.body.evalDate,
+      user_res: req.body.user_res
+    }
+    projectData=newEntry;
+    data.push(newEntry);
+    res.send(data);
+    console.log(data);
+    //projectData.push(newEntry);
 };
 
  

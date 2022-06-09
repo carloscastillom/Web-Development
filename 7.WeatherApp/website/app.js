@@ -8,7 +8,7 @@
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
-
+//console.log(newDate)
 
  /* WEB API WITH FETCH DEMO--  */
  let baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip='
@@ -36,8 +36,9 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
  .then(function(data){
-  postData('/animal', { temperature: "test", evalDate: newDate, user_res: feel });
+  postData('/animal', { temperature: data.temperature, evalDate: newDate, user_res: feel });
 })
+  .then(updateUI())
 }
 
 // Definition of function to execute when generate is clicked
@@ -52,7 +53,8 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
      const data = await res.json();
      data.temperature= data.main.temp
-     console.log(data.main.temp)
+     console.log(data.temperature)
+     return data;
      // 1. We can do something with our returned data here-- like chain promises!
 
      // 2. 
@@ -75,9 +77,9 @@ const postData = async ( url = '', data = {})=>{
         'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      temperature: data.temp,
-      evalDate: data.date,
-      user_res: data.content
+      temperature: data.temperature,
+      evalDate: data.evalDate,
+      user_res: data.user_res
     }), // body data type must match "Content-Type" header        
   });
 
@@ -96,13 +98,34 @@ const retrieveData = async (url='') =>{
   const request = await fetch(url);
   try {
   // Transform into JSON
-  const allData = await request.json()
+  const allData = await request.json();
+  console.log(request)
+/*
+  document.getElementById("temp").innerHTML = allData.temperature;
+  document.getElementById("content").innerHTML = allData.user_res;
+  document.getElementById("date").innerHTML = allData.evalDate;
+*/
   }
   catch(error) {
     console.log("error", error);
     // appropriately handle the error
   }
 };
+
+
+const updateUI = async () => {
+  const request = await fetch('/all');
+  try{
+    const allData = await request.json();
+    console.log(allData)
+    document.getElementById("temp").innerHTML = allData.temperature;
+    document.getElementById("content").innerHTML = allData.user_res;
+    document.getElementById("date").innerHTML = allData.evalDate;
+
+  }catch(error){
+    console.log("error", error);
+  }
+}
 
 APIdata={
     temperature:30, 
