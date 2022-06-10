@@ -39,7 +39,7 @@ function callBack(req,res){
   res.send('POST received');
 }
 */ 
-data =[];
+//data =[];
 
 // POST route
 app.post('/animal', addAnimal);

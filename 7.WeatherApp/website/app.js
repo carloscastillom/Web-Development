@@ -36,10 +36,30 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
  .then(function(data){
-  postData('/animal', { temperature: data.temperature, evalDate: newDate, user_res: feel })
-  console.log(data);
-})
-  .then(updateUI())
+
+
+  datanew={
+    temperature: data.temperature, 
+    evalDate: newDate,
+    user_res: feel
+  }
+
+
+  postData('/animal',datanew)  
+  //get the all data Request old data
+
+  //postGet(datanew)
+  console.log(datanew);
+  return datanew;
+  })
+
+  .then(function(datanew){
+    retrieveData('/all')
+  })
+
+// this was the last thing i changed and it worked
+  .then(()=>updateUI())
+
 }
 
 // Definition of function to execute when generate is clicked
@@ -113,13 +133,12 @@ const retrieveData = async (url='') =>{
   }
 };
 
-
 const updateUI = async () => {
   const request = await fetch('/all');
   try{
     const allData = await request.json();
     console.log(allData)
-    document.getElementById("temp").innerHTML = allData.temperature;
+    document.getElementById("temp").innerHTML = Math.round(allData.temperature)+ ' degrees';
     document.getElementById("content").innerHTML = allData.user_res;
     document.getElementById("date").innerHTML = allData.evalDate;
 
@@ -127,8 +146,6 @@ const updateUI = async () => {
     console.log("error", error);
   }
 }
-
-
 /*
 APIdata={
     temperature:30, 
@@ -136,8 +153,6 @@ APIdata={
     user_res: "test2"
   }
   
-
-
 
  //taken from the Course 
 //do both to get the info after it was posted
