@@ -36,6 +36,7 @@ The Following Landing page have 4 different sectionswhich are dinamically select
 
 ## Node.js
 
-Try to connect the api for yahoofinance. is it even possible? check the different things
+Try to connect the api for yahoofinance. is it even possible? check the different thing. it seems its only posible with python. python and Javascript?
+
 
 Click on the 
