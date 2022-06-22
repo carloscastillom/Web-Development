@@ -4,7 +4,7 @@
 proximamente web app de finances. 
 Web API yahoo Finance.
 
-EBIT and EBITDA for airbnb
+EBIT and EBITDA for airbnb OPEX
 
 
 api. flask with python? maybe its a good idea. connect with flask and aJavascript
