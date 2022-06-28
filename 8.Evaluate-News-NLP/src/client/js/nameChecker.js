@@ -1,13 +1,4 @@
-async function checkForName(inputText) {
-
-    if (inputText.length == 0) {
-        alert("Please add a URL to analyze")
-        return false;
-    }
-
-    return true;
-        
-    /*
+function checkForName(inputText) {
     console.log("::: Running checkForName :::", inputText);
     let names = [
         "Picard",
@@ -20,8 +11,6 @@ async function checkForName(inputText) {
     if(names.includes(inputText)) {
         alert("Welcome, Captain!")
     }
-
-    */
 }
 
 export { checkForName }
